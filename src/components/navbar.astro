@@ -1,7 +1,7 @@
 ---
 import Container from "@components/container.astro";
 import logoImage from "@assets/logo.svg";
-import darkLogo from "@assets/logo-dark.svg";
+import darkLogo from "@assets/logo-dark5.svg";
 import { Image } from "@astrojs/image/components";
 
 interface Menu {
@@ -68,7 +68,7 @@ const mobilemenu: Menu[] = [...leftmenu, ...rightmenu];
         </a>
 
         <a class="hidden w-28 dark:block" href="/">
-          <Image src={darkLogo} alt="Logo" />
+          <Image src={darkLogo} alt="Logo" class="dark-logo" />
         </a>
 
         <button
@@ -93,7 +93,8 @@ const mobilemenu: Menu[] = [...leftmenu, ...rightmenu];
             ></path>
           </svg>
         </button>
-      </div><div
+      </div>
+      <div
         class="flex-col items-center justify-start order-2 hidden w-full md:flex md:flex-row md:w-auto md:flex-1 md:order-none">
         {
           rightmenu.map((item) => (
@@ -124,6 +125,13 @@ const mobilemenu: Menu[] = [...leftmenu, ...rightmenu];
     </div>
   </nav>
 </Container>
+
+<style>
+  .dark-logo {
+    width: 200px; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+  }
+</style>
 
 <script is:inline>
   const menuButton = document.getElementById("menu");
